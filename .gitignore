@@ -1,0 +1,7 @@
+venv/
+venv3.7/
+
+# Pycharm config
+.idea/
+
+imgs/*
