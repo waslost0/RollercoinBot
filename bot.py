@@ -133,7 +133,10 @@ def start_game(self, start_img_path):
         pyautogui.moveTo(100, 100)
         return True
     sx, sy = find_image("rc_items/start_game.png", screen_grab())
-    mouse_click(sx + 2, sy + 2, wait=0.1)
+    if sx and sy:
+        mouse_click(sx + 2, sy + 2, wait=0.1)
+    else:
+        return True
     return False
 
 
@@ -156,6 +159,7 @@ def end_game(self, fail=False):
                 break
             time.sleep(1)
         click_image("rc_items/gain_power.png")
+        click_image("rc_items/gain_power_error.png")
 
         time.sleep(3)
 
