@@ -13,6 +13,9 @@ import shutil
 from PIL import ImageGrab
 from MTM import matchTemplates
 from threading import Thread
+#while True:
+##    print(pyautogui.position())
+ #   time.sleep(0.3)
 
 GAME_NUM = 0
 START_TIME = datetime.datetime.now()
@@ -161,15 +164,16 @@ def end_game(self, fail=False):
         click_image("rc_items/gain_power.png")
         click_image("rc_items/gain_power_error.png")
 
-        time.sleep(3)
+        if check_image("rc_items/collect_pc.png"):
+            click_image("rc_items/collect_pc.png")
 
         keyboard.press_and_release("page up")
-        time.sleep(2)
+        time.sleep(5)
         click_image("rc_items/goto_games.png")
         time.sleep(2)
 
         if check_image("rc_items/collect_pc.png"):
-            click_image("rc_items/click_image")
+            click_image("rc_items/collect_pc.png")
     else:
         keyboard.press_and_release("page up")
         time.sleep(2)
@@ -391,30 +395,40 @@ class BotCoinClick:
             end_game(self, fail=True)
 
         while self.game_status == "running":
-            pic = pyautogui.screenshot(region=(530, 430, 828, 417,))
+            if pyautogui.locateOnScreen("rc_items/gain_power_error.png", confidence=0.9):
+                self.game_status = "ended"
+                break
+            pic = pyautogui.screenshot(region=(530, 370, 828, 417,))
             width, height = pic.size
+            clicked = False
             for x in range(0, width, 5):
+                if clicked:
+                    break
                 for y in range(0, height, 5):
                     r, g, b = pic.getpixel((x, y))
 
                     # blue coin
                     if b == 183 and r == 0:
-                        mouse_click(x + 530, y + 440, wait=0)
+                        mouse_click(x + 530, y + 380, wait=0)
+                        clicked = True
                         break
 
                     # yellow coin
-                    if b == 64 and r == 200:
-                        mouse_click(x + 530, y + 440, wait=0)
+                    elif b == 64 and r == 200:
+                        clicked = True
+                        mouse_click(x + 530, y + 380, wait=0)
                         break
 
                     # orange coin
-                    if b == 33 and r == 231:
-                        mouse_click(x + 530, y + 440, wait=0)
+                    elif b == 33 and r == 231:
+                        clicked = True
+                        mouse_click(x + 530, y + 380, wait=0)
                         break
 
                     # grey coin
-                    if b == 230 and r == 230:
-                        mouse_click(x + 535, y + 440, wait=0)
+                    elif b == 230 and r == 230:
+                        clicked = True
+                        mouse_click(x + 535, y + 380, wait=0)
                         break
 
                     if self.game_status == "ended":
