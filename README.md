@@ -30,6 +30,7 @@ You can also support me just by playing Rollercoin and running my bot, if you si
 
 If you find any bugs during execution, open up an issue here on github
 
+Also you can just run the script in a virtual machine on your pc, like vmware workstation ([how it looks](https://i.imgur.com/AgBly6F.png))
 
 ## Buy me a coffee
 <a href="https://www.buymeacoffee.com/waslost" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee"></a>
