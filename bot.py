@@ -163,12 +163,13 @@ def end_game(self, fail=False):
             time.sleep(1)
         click_image("rc_items/gain_power.png")
         click_image("rc_items/gain_power_error.png")
+        time.sleep(15)
 
         if check_image("rc_items/collect_pc.png"):
             click_image("rc_items/collect_pc.png")
 
         keyboard.press_and_release("page up")
-        time.sleep(5)
+        time.sleep(2)
         click_image("rc_items/goto_games.png")
         time.sleep(2)
 
