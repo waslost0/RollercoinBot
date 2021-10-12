@@ -9,6 +9,8 @@ IMPORTANT: \
 Use this bot at your own risk. I'm not responsible for anything going wrong! 
 I'm also not responsible if you get blocked by Rollercoin!
 
+![warn](https://i.imgur.com/413haZZ.png)
+
 Join Rollercoin [Here](https://rollercoin.com/?r=kpfjgoon) \
 You will get 1000 Satoshis with the referral code if you sign up.
 You can also support me just by playing Rollercoin and running my bot, if you signed up with the link above!
@@ -30,7 +32,7 @@ You can also support me just by playing Rollercoin and running my bot, if you si
 
 If you find any bugs during execution, open up an issue here on github
 
-Also you can just run the script in a virtual machine on your pc, like vmware workstation ([how it looks](https://i.imgur.com/AgBly6F.png))
+Also you can just run the script in a virtual machine on your pc, like vmware workstation (![how it looks](https://i.imgur.com/AgBly6F.png))
 
 ## Buy me a coffee
 <a href="https://www.buymeacoffee.com/waslost" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee"></a>
